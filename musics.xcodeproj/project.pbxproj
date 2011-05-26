@@ -16,6 +16,8 @@
 		03133DEB138E85C900189098 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03133DE9138E85C900189098 /* MainWindow.xib */; };
 		03133DEE138E85C900189098 /* musicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03133DED138E85C900189098 /* musicsViewController.m */; };
 		03133DF1138E85C900189098 /* musicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03133DEF138E85C900189098 /* musicsViewController.xib */; };
+		03133DF9138E89C100189098 /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = 03133DF8138E89C100189098 /* off.png */; };
+		03133DFB138E89C500189098 /* on.png in Resources */ = {isa = PBXBuildFile; fileRef = 03133DFA138E89C500189098 /* on.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +25,19 @@
 		03133DD7138E85C900189098 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03133DD9138E85C900189098 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03133DDB138E85C900189098 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		03133DDF138E85C900189098 /* musics-Info.plist */ = {isa = PBXFileReference; path = "musics-Info.plist"; sourceTree = "<group>"; };
+		03133DDF138E85C900189098 /* musics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "musics-Info.plist"; sourceTree = "<group>"; };
 		03133DE1138E85C900189098 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		03133DE3138E85C900189098 /* musics-Prefix.pch */ = {isa = PBXFileReference; path = "musics-Prefix.pch"; sourceTree = "<group>"; };
+		03133DE3138E85C900189098 /* musics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "musics-Prefix.pch"; sourceTree = "<group>"; };
 		03133DE4138E85C900189098 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		03133DE6138E85C900189098 /* musicsAppDelegate.h */ = {isa = PBXFileReference; path = musicsAppDelegate.h; sourceTree = "<group>"; };
+		03133DE6138E85C900189098 /* musicsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = musicsAppDelegate.h; sourceTree = "<group>"; };
 		03133DE7138E85C900189098 /* musicsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = musicsAppDelegate.m; sourceTree = "<group>"; };
 		03133DEA138E85C900189098 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		03133DEC138E85C900189098 /* musicsViewController.h */ = {isa = PBXFileReference; path = musicsViewController.h; sourceTree = "<group>"; };
+		03133DEC138E85C900189098 /* musicsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = musicsViewController.h; sourceTree = "<group>"; };
 		03133DED138E85C900189098 /* musicsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = musicsViewController.m; sourceTree = "<group>"; };
 		03133DF0138E85C900189098 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/musicsViewController.xib; sourceTree = "<group>"; };
+		03133DF7138E85F100189098 /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		03133DF8138E89C100189098 /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
+		03133DFA138E89C500189098 /* on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,7 @@
 				03133DED138E85C900189098 /* musicsViewController.m */,
 				03133DEF138E85C900189098 /* musicsViewController.xib */,
 				03133DDE138E85C900189098 /* Supporting Files */,
+				03133DF7138E85F100189098 /* defs.h */,
 			);
 			path = musics;
 			sourceTree = "<group>";
@@ -93,6 +99,8 @@
 		03133DDE138E85C900189098 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03133DFA138E89C500189098 /* on.png */,
+				03133DF8138E89C100189098 /* off.png */,
 				03133DDF138E85C900189098 /* musics-Info.plist */,
 				03133DE0138E85C900189098 /* InfoPlist.strings */,
 				03133DE3138E85C900189098 /* musics-Prefix.pch */,
@@ -151,6 +159,8 @@
 				03133DE2138E85C900189098 /* InfoPlist.strings in Resources */,
 				03133DEB138E85C900189098 /* MainWindow.xib in Resources */,
 				03133DF1138E85C900189098 /* musicsViewController.xib in Resources */,
+				03133DF9138E89C100189098 /* off.png in Resources */,
+				03133DFB138E89C500189098 /* on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

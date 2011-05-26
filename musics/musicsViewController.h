@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface musicsViewController : UIViewController {
-    
+    IBOutlet UIScrollView *scrollView;
 }
 
 @end

@@ -25,25 +25,67 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self createButtons];
 }
-*/
+
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - button creation
+- (void) createButtonX: (int) x y: (int) y tag: (int) tag
+{
+	UIButton *b = [UIButton buttonWithType: UIButtonTypeCustom];
+	CGRect f = CGRectMake(x, y, BUTTON_WIDTH, BUTTON_HEIGHT);
+	[b setFrame: f];
+	
+//	[b setTitle: @"Tap" forState: UIControlStateNormal];
+	[b setTag: tag];
+	[b addTarget: self action: @selector(buttonPressed:) forControlEvents: UIControlEventTouchUpInside];
+	[b setImage: [UIImage imageNamed: @"on.png"] forState: UIControlStateSelected];
+	[b setImage: [UIImage imageNamed: @"off.png"] forState: UIControlStateNormal];
+	[b.imageView setContentMode: UIViewContentModeScaleToFill];
+	[scrollView addSubview: b];
+}
+
+- (void) createButtons 
+{
+	scrollView.contentSize = CGSizeMake(self.view.frame.size.width, ROWS * (BUTTON_HEIGHT + Y_PADDING));
+	scrollView.maximumZoomScale = 4.0;
+	scrollView.minimumZoomScale = 0.75;
+	scrollView.clipsToBounds = YES;
+	
+
+	for (int y = 0; y < ROWS; y++) {
+		for (int x = 0; x < COLS; x++) {
+			[self createButtonX: X_OFFSET+ x*(BUTTON_WIDTH+X_PADDING) y: y*(BUTTON_HEIGHT+Y_PADDING) tag: x + y * COLS];				
+		}
+	}
+}
+
+#pragma mark - button handler
+- (void) buttonPressed: (id) sender
+{
+	NSLog(@"press on %i", [sender tag]);
+	//[sender setOn: ![sender isOn]];
+	//[sender setImage:[UIImage imageNamed: [sender isOn] ? @"on.png" :@"off.png"] forState:UIControlStateNormal];
+	[sender setSelected: ![sender isSelected]];
 }
 
 @end
