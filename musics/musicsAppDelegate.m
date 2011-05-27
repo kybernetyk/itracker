@@ -22,16 +22,16 @@
 	// Override point for customization after application launch.
 	NSLog(@"creating buffers ...");
 	
+	g_pattern_mode = e_mode_fourths;
+	
 	g_tracks = malloc(3 * sizeof(struct music_buffer_t*));
 	
 	for (int i = 0; i < 3; i ++)
-		g_tracks[i] = mbuf_new();
+		g_tracks[i] = mbuf_new(g_pattern_mode, COLS, ROWS);
 	
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
 	
-	
-
 	
     return YES;
 }

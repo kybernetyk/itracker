@@ -9,3 +9,4 @@
 #include "globals.h"
 
 struct music_buffer_t **g_tracks;
+enum mbuf_mode g_pattern_mode;

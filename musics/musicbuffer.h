@@ -8,16 +8,24 @@
 
 #pragma once
 
+enum mbuf_mode {
+	e_mode_eights,
+	e_mode_fourths
+};
+
 struct music_element_t {
 	int sample_id;
 };
 
 struct music_buffer_t {
-	struct music_element_t buf[MUS_BUFSZ];
+	struct music_element_t *buf;
+
+	enum mbuf_mode mode;
+	int cols, rows;
 };
 
 
-extern struct music_buffer_t *mbuf_new(void);
+extern struct music_buffer_t *mbuf_new(enum mbuf_mode mode, int cols, int rows);
 extern void mbuf_init(struct music_buffer_t *pbuf);
 extern void mbuf_free(struct music_buffer_t *pbuf);
 
