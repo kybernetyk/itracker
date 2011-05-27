@@ -9,5 +9,7 @@
 #pragma once
 #import "musicbuffer.h"
 
-extern struct pattern_buffer_t **g_tracks;
-extern enum ptrnbuf_mode g_pattern_mode; 
+extern struct pattern_t **g_patterns;
+extern int g_ui_lines_per_beat;
+extern int g_ui_tracks;
+extern int g_ui_lines;

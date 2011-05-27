@@ -8,5 +8,7 @@
 
 #include "globals.h"
 
-struct pattern_buffer_t **g_tracks;
-enum ptrnbuf_mode g_pattern_mode;
+struct pattern_t **g_patterns;
+int g_ui_lines_per_beat;
+int g_ui_tracks;
+int g_ui_lines;

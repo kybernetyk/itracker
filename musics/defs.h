@@ -8,13 +8,9 @@
 
 #pragma once
 
-#define UI_COLS 5
-#define UI_ROWS 16
-
 #define X_OFFSET 60
 
 #define BUTTON_WIDTH 40
-//// ((320-X_OFFSET)/COLS)
 #define BUTTON_HEIGHT 40
 
 #define X_PADDING 10

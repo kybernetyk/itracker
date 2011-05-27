@@ -22,12 +22,21 @@
 	// Override point for customization after application launch.
 	NSLog(@"creating buffers ...");
 	
-	g_pattern_mode = e_mode_fourths;
 	
-	g_tracks = malloc(3 * sizeof(struct music_buffer_t*));
+	g_ui_lines_per_beat = 1;
+	g_ui_lines = 16;	
+	g_ui_tracks = 5;
 	
-	for (int i = 0; i < 3; i ++)
-		g_tracks[i] = ptrnbuf_new(e_mode_eights, 5, 32);	//32 rows, 1 row = 1/8th, 5 columns
+	g_patterns = malloc(3 * sizeof(struct pattern_t*));
+	for (int i = 0; i < 3; i ++) {
+		g_patterns[i] = pattern_new(4, g_ui_tracks, 64);
+	}
+	
+	g_patterns[0]->tracks[0].instrument_id = 1;
+	g_patterns[0]->tracks[1].instrument_id = 2;
+	g_patterns[0]->tracks[2].instrument_id = 3;
+	g_patterns[0]->tracks[3].instrument_id = 4;
+	g_patterns[0]->tracks[4].instrument_id = 5;
 	
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];

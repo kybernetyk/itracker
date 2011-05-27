@@ -10,7 +10,7 @@
 
 @interface musicsViewController : UIViewController {
     IBOutlet UIScrollView *scrollView;
-	int track;
+	int pattern;
 	
 	int samples[5];
 }

@@ -8,45 +8,44 @@
 
 #import "musicbuffer.h"
 
-struct pattern_buffer_t *ptrnbuf_new(enum ptrnbuf_mode mode, int cols, int rows)
+
+struct pattern_t *pattern_new(int lines_per_beat, int tracks, int lines)
 {
-	struct pattern_buffer_t *p = malloc(sizeof(struct pattern_buffer_t));
+	struct pattern_t *p = malloc(sizeof(struct pattern_t));
+	p->num_lpb = lines_per_beat;
+	p->num_lines = lines;
+	p->num_tracks = tracks;
 	
-	p->buf = malloc(sizeof(struct pattern_element_t)*cols*rows);
-	p->mode = mode;
-	p->cols = cols;
-	p->rows = rows;
-	ptrnbuf_init(p);
+	p->tracks = malloc(sizeof(struct track_t)*tracks);
+	for (int i = 0; i < tracks; i ++) {
+		p->tracks[i].elements = malloc(sizeof(struct element_t) * lines);
+		for (int j = 0; j < lines; j++) {
+			p->tracks[i].elements[j].duration = 0;
+			p->tracks[i].elements[j].effect = 0;
+		}
+		p->tracks[i].instrument_id = 0;
+	}
+	
 	return p;
 }
 
 
-void ptrnbuf_init(struct pattern_buffer_t *pbuf)
+void pattern_free(struct pattern_t *p)
 {
-	for (int i = 0; i < pbuf->cols * pbuf->rows; i++) {
-		pbuf->buf[i].sample_id = 0;
-	}
+	for (int i = 0; i < p->num_tracks; i++)
+		free(p->tracks[i].elements);
+	free(p->tracks);
+	free(p);
 }
 
-void ptrnbuf_free(struct pattern_buffer_t *pbuf)
+struct element_t *pattern_elem_at(struct pattern_t *p, int track, int line)
 {
-	free(pbuf->buf);
-	free(pbuf);
-}
-
-struct pattern_element_t *ptrnbuf_elem_at(struct pattern_buffer_t *pbuf, int col, int row, enum ptrnbuf_mode access_mode)
-{
-	if (access_mode == e_mode_fourths && pbuf->mode == e_mode_eights)
-		row *= 2;
-	if (access_mode == e_mode_eights && pbuf->mode == e_mode_fourths)
-		row /= 2;
-	
-	if (col >= pbuf->cols || row >= pbuf->rows || 
-		col < 0 || row < 0) {
+	if (track >= p->num_tracks || line >= p->num_lines || 
+		track < 0 || line < 0) {
 		abort();
 	}
 	
-	NSLog(@"accessing element @ %i,%i", col, row);
-	
-	return &pbuf->buf[col + row * pbuf->cols];	
+	NSLog(@"accessing element @ %i,%i", track, line);
+	struct element_t *e = &p->tracks[track].elements[line];
+	return e;
 }

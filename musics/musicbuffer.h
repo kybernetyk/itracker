@@ -8,27 +8,29 @@
 
 #pragma once
 
-enum ptrnbuf_mode {
-	e_mode_eights,
-	e_mode_fourths
+struct element_t {
+	int duration;		//actually duration is only a boolean value if play or not
+	int effect;			//effects ... hum - will probably never use that :]
+	//other shit
 };
 
-struct pattern_element_t {
-	int sample_id;
+struct track_t {
+	struct element_t *elements;
+	int instrument_id;
 };
 
-struct pattern_buffer_t {
-	struct pattern_element_t *buf;
+struct pattern_t {
+	struct track_t *tracks;
 
-	enum ptrnbuf_mode mode;
-	int cols, rows;
+	int num_lpb; //lines per beat
+	int num_tracks;
+	int num_lines;
 };
 
 
-extern struct pattern_buffer_t *ptrnbuf_new(enum ptrnbuf_mode mode, int cols, int rows);
-extern void ptrnbuf_init(struct pattern_buffer_t *pbuf);
-extern void ptrnbuf_free(struct pattern_buffer_t *pbuf);
+extern struct pattern_t *pattern_new(int lines_per_beat, int tracks, int lines);
+extern void pattern_free(struct pattern_t *p);
 
 //access mode is the mode the UI is in. if the UI shows fourths and wants to access row 1
 //and our pattern buffer holds eights we will actually return row 2 (which is the start of the 2nd fourth note)
-extern struct pattern_element_t *ptrnbuf_elem_at(struct pattern_buffer_t *pbuf, int col, int row, enum ptrnbuf_mode access_mode);
+extern struct element_t *pattern_elem_at(struct pattern_t *p, int track, int line);
