@@ -27,7 +27,7 @@
 	g_tracks = malloc(3 * sizeof(struct music_buffer_t*));
 	
 	for (int i = 0; i < 3; i ++)
-		g_tracks[i] = mbuf_new(g_pattern_mode, COLS, ROWS);
+		g_tracks[i] = ptrnbuf_new(e_mode_eights, 5, 32);	//32 rows, 1 row = 1/8th, 5 columns
 	
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];

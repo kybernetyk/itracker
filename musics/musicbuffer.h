@@ -1,5 +1,5 @@
 //
-//  musicbuffer.h
+//  ptrnbuf_
 //  musics
 //
 //  Created by jrk on 27/5/11.
@@ -8,25 +8,27 @@
 
 #pragma once
 
-enum mbuf_mode {
+enum ptrnbuf_mode {
 	e_mode_eights,
 	e_mode_fourths
 };
 
-struct music_element_t {
+struct pattern_element_t {
 	int sample_id;
 };
 
-struct music_buffer_t {
-	struct music_element_t *buf;
+struct pattern_buffer_t {
+	struct pattern_element_t *buf;
 
-	enum mbuf_mode mode;
+	enum ptrnbuf_mode mode;
 	int cols, rows;
 };
 
 
-extern struct music_buffer_t *mbuf_new(enum mbuf_mode mode, int cols, int rows);
-extern void mbuf_init(struct music_buffer_t *pbuf);
-extern void mbuf_free(struct music_buffer_t *pbuf);
+extern struct pattern_buffer_t *ptrnbuf_new(enum ptrnbuf_mode mode, int cols, int rows);
+extern void ptrnbuf_init(struct pattern_buffer_t *pbuf);
+extern void ptrnbuf_free(struct pattern_buffer_t *pbuf);
 
-extern struct music_element_t *mbuf_elem_at(struct music_buffer_t *pbuf, int col, int row);
+//access mode is the mode the UI is in. if the UI shows fourths and wants to access row 1
+//and our pattern buffer holds eights we will actually return row 2 (which is the start of the 2nd fourth note)
+extern struct pattern_element_t *ptrnbuf_elem_at(struct pattern_buffer_t *pbuf, int col, int row, enum ptrnbuf_mode access_mode);

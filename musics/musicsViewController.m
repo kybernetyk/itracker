@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
 //	memset(samples, 0x00, COLS * sizeof(int));
-	for (int i = 0; i < COLS; i++)
+	for (int i = 0; i < 5; i++)
 		samples[i] = i+1;
     [super viewDidLoad];
 	[self createButtons];
@@ -92,21 +92,22 @@
 
 - (void) createButtons 
 {
-	scrollView.contentSize = CGSizeMake(self.view.frame.size.width, ROWS * (BUTTON_HEIGHT + Y_PADDING));
+	scrollView.contentSize = CGSizeMake(self.view.frame.size.width, UI_ROWS * (BUTTON_HEIGHT + Y_PADDING));
 	scrollView.maximumZoomScale = 4.0;
 	scrollView.minimumZoomScale = 0.75;
 	scrollView.clipsToBounds = YES;
-	
 
-	for (int y = 0; y < ROWS; y++) {
-		for (int x = 0; x < COLS; x++) {
-			[self createButtonX: X_OFFSET+ x*(BUTTON_WIDTH+X_PADDING) y: y*(BUTTON_HEIGHT+Y_PADDING) tag: x + y * COLS];				
+	int dasher = (g_pattern_mode == e_mode_eights) ? 2 : 1;
+	int marker = (g_pattern_mode == e_mode_eights) ? 8 : 4;	
+
+	for (int y = 0; y < UI_ROWS; y++) {
+		for (int x = 0; x < UI_COLS; x++) {
+			[self createButtonX: X_OFFSET+ x*(BUTTON_WIDTH+X_PADDING) y: y*(BUTTON_HEIGHT+Y_PADDING) tag: x + y * UI_COLS];				
 		}
-		if (y % ((40/BUTTON_HEIGHT) * 1) == 0) {
+		if (y % dasher == 0) {
 			[self createDasheAtRow: y];
 		}
-
-		if (y % ((40/BUTTON_HEIGHT) * 4) == 0) {
+		if (y % marker == 0) {
 			[self createMarkerAtRow: y];
 		}
 		
@@ -122,11 +123,12 @@
 	[sender setSelected: ![sender isSelected]];
 	
 	BOOL b = [sender isSelected];
-	int row = [sender tag] / COLS;
-	int col = [sender tag] % COLS;
+	int row = [sender tag] / UI_COLS;
+	int col = [sender tag] % UI_COLS;
 	
 	NSLog(@"col: %i, row: %i", col, row);
-	struct music_element_t *p = mbuf_elem_at(g_tracks[track], col, row);
+	
+	struct pattern_element_t *p = ptrnbuf_elem_at(g_tracks[track], col, row, g_pattern_mode);
 	
 	p->sample_id = ( (b) ? samples[col] : 0);
 

@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#include "musicbuffer.h"
+#import "musicbuffer.h"
 
-extern struct music_buffer_t **g_tracks;
-extern enum mbuf_mode g_pattern_mode; 
+extern struct pattern_buffer_t **g_tracks;
+extern enum ptrnbuf_mode g_pattern_mode; 

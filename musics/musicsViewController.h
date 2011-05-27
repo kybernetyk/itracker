@@ -12,7 +12,7 @@
     IBOutlet UIScrollView *scrollView;
 	int track;
 	
-	int samples[COLS];
+	int samples[5];
 }
 
 - (IBAction) playpause: (id) sender;
