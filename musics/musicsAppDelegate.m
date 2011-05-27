@@ -7,11 +7,11 @@
 //
 
 #import "musicsAppDelegate.h"
-
 #import "musicsViewController.h"
 
-@implementation musicsAppDelegate
+#import "musicbuffer.h"
 
+@implementation musicsAppDelegate
 
 @synthesize window=_window;
 
@@ -20,9 +20,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Override point for customization after application launch.
-	 
+	NSLog(@"creating buffers ...");
+	
+	g_tracks = malloc(3 * sizeof(struct music_buffer_t*));
+	
+	for (int i = 0; i < 3; i ++)
+		g_tracks[i] = mbuf_new();
+	
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
+	
+	
+
+	
     return YES;
 }
 

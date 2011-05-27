@@ -10,6 +10,11 @@
 
 @interface musicsViewController : UIViewController {
     IBOutlet UIScrollView *scrollView;
+	int track;
+	
+	int samples[COLS];
 }
+
+- (IBAction) playpause: (id) sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "musicsViewController.h"
+#import "musicbuffer.h"
 
 @implementation musicsViewController
 
@@ -29,6 +30,9 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+//	memset(samples, 0x00, COLS * sizeof(int));
+	for (int i = 0; i < COLS; i++)
+		samples[i] = i+1;
     [super viewDidLoad];
 	[self createButtons];
 }
@@ -46,6 +50,12 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - ui events
+- (void) playpause: (id) sender
+{
+	
 }
 
 #pragma mark - button creation
@@ -86,6 +96,19 @@
 	//[sender setOn: ![sender isOn]];
 	//[sender setImage:[UIImage imageNamed: [sender isOn] ? @"on.png" :@"off.png"] forState:UIControlStateNormal];
 	[sender setSelected: ![sender isSelected]];
+	
+	BOOL b = [sender isSelected];
+	int row = [sender tag] / COLS;
+	int col = [sender tag] % COLS;
+	
+	NSLog(@"col: %i, row: %i", col, row);
+	struct music_element_t *p = mbuf_elem_at(g_tracks[track], col, row);
+	
+	p->sample_id = ( (b) ? samples[col] : 0);
+
+	
+	NSLog(@"sample: %i", p->sample_id);	
+
 }
 
 @end

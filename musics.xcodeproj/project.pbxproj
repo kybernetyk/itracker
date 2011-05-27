@@ -18,6 +18,8 @@
 		03133DF1138E85C900189098 /* musicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03133DEF138E85C900189098 /* musicsViewController.xib */; };
 		03133DF9138E89C100189098 /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = 03133DF8138E89C100189098 /* off.png */; };
 		03133DFB138E89C500189098 /* on.png in Resources */ = {isa = PBXBuildFile; fileRef = 03133DFA138E89C500189098 /* on.png */; };
+		034C928F138FCC9A00BFC4D7 /* musicbuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C928D138FCC9A00BFC4D7 /* musicbuffer.m */; };
+		034C9293138FCEC300BFC4D7 /* globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 034C9292138FCEC300BFC4D7 /* globals.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		03133DF7138E85F100189098 /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
 		03133DF8138E89C100189098 /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
 		03133DFA138E89C500189098 /* on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on.png; sourceTree = "<group>"; };
+		034C928D138FCC9A00BFC4D7 /* musicbuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicbuffer.m; sourceTree = "<group>"; };
+		034C928E138FCC9A00BFC4D7 /* musicbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicbuffer.h; sourceTree = "<group>"; };
+		034C9291138FCE7E00BFC4D7 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		034C9292138FCEC300BFC4D7 /* globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = globals.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,10 @@
 				03133DEF138E85C900189098 /* musicsViewController.xib */,
 				03133DDE138E85C900189098 /* Supporting Files */,
 				03133DF7138E85F100189098 /* defs.h */,
+				034C928D138FCC9A00BFC4D7 /* musicbuffer.m */,
+				034C928E138FCC9A00BFC4D7 /* musicbuffer.h */,
+				034C9291138FCE7E00BFC4D7 /* globals.h */,
+				034C9292138FCEC300BFC4D7 /* globals.c */,
 			);
 			path = musics;
 			sourceTree = "<group>";
@@ -174,6 +184,8 @@
 				03133DE5138E85C900189098 /* main.m in Sources */,
 				03133DE8138E85C900189098 /* musicsAppDelegate.m in Sources */,
 				03133DEE138E85C900189098 /* musicsViewController.m in Sources */,
+				034C928F138FCC9A00BFC4D7 /* musicbuffer.m in Sources */,
+				034C9293138FCEC300BFC4D7 /* globals.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +298,7 @@
 				03133DF6138E85C900189098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
