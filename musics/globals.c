@@ -12,3 +12,5 @@ struct pattern_t **g_patterns;
 int g_ui_lines_per_beat;
 int g_ui_tracks;
 int g_ui_lines;
+int g_bpm;
+int g_player_cur_line;

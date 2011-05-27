@@ -11,7 +11,7 @@
 #define X_OFFSET 60
 
 #define BUTTON_WIDTH 40
-#define BUTTON_HEIGHT 40
+#define BUTTON_HEIGHT 20
 
 #define X_PADDING 10
 #define Y_PADDING 10

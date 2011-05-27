@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Player.h"
 @class musicsViewController;
 
 @interface musicsAppDelegate : NSObject <UIApplicationDelegate> {
-
+	Player *player;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

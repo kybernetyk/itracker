@@ -20,6 +20,8 @@
 		03133DFB138E89C500189098 /* on.png in Resources */ = {isa = PBXBuildFile; fileRef = 03133DFA138E89C500189098 /* on.png */; };
 		034C928F138FCC9A00BFC4D7 /* musicbuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C928D138FCC9A00BFC4D7 /* musicbuffer.m */; };
 		034C9293138FCEC300BFC4D7 /* globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 034C9292138FCEC300BFC4D7 /* globals.c */; };
+		034C9296138FFA2800BFC4D7 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C9295138FFA2800BFC4D7 /* Player.m */; };
+		034C9298138FFA7500BFC4D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034C9297138FFA7500BFC4D7 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		034C928E138FCC9A00BFC4D7 /* musicbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = musicbuffer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		034C9291138FCE7E00BFC4D7 /* globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = globals.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		034C9292138FCEC300BFC4D7 /* globals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = globals.c; sourceTree = "<group>"; };
+		034C9294138FFA2800BFC4D7 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		034C9295138FFA2800BFC4D7 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		034C9297138FFA7500BFC4D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034C9298138FFA7500BFC4D7 /* QuartzCore.framework in Frameworks */,
 				03133DD8138E85C900189098 /* UIKit.framework in Frameworks */,
 				03133DDA138E85C900189098 /* Foundation.framework in Frameworks */,
 				03133DDC138E85C900189098 /* CoreGraphics.framework in Frameworks */,
@@ -63,6 +69,7 @@
 		03133DC8138E85C900189098 = {
 			isa = PBXGroup;
 			children = (
+				034C9297138FFA7500BFC4D7 /* QuartzCore.framework */,
 				03133DDD138E85C900189098 /* musics */,
 				03133DD6138E85C900189098 /* Frameworks */,
 				03133DD4138E85C900189098 /* Products */,
@@ -102,6 +109,8 @@
 				034C928E138FCC9A00BFC4D7 /* musicbuffer.h */,
 				034C9291138FCE7E00BFC4D7 /* globals.h */,
 				034C9292138FCEC300BFC4D7 /* globals.c */,
+				034C9294138FFA2800BFC4D7 /* Player.h */,
+				034C9295138FFA2800BFC4D7 /* Player.m */,
 			);
 			path = musics;
 			sourceTree = "<group>";
@@ -186,6 +195,7 @@
 				03133DEE138E85C900189098 /* musicsViewController.m in Sources */,
 				034C928F138FCC9A00BFC4D7 /* musicbuffer.m in Sources */,
 				034C9293138FCEC300BFC4D7 /* globals.c in Sources */,
+				034C9296138FFA2800BFC4D7 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

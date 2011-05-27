@@ -13,3 +13,7 @@ extern struct pattern_t **g_patterns;
 extern int g_ui_lines_per_beat;
 extern int g_ui_tracks;
 extern int g_ui_lines;
+
+extern int g_bpm;
+
+extern int g_player_cur_line;

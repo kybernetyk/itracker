@@ -8,17 +8,20 @@
 
 #pragma once
 
+//each element tells the player engine what to do
 struct element_t {
 	int duration;		//actually duration is only a boolean value if play or not
 	int effect;			//effects ... hum - will probably never use that :]
 	//other shit
 };
 
+//each track has an instrument assigned and contains notes (elements)
 struct track_t {
 	struct element_t *elements;
 	int instrument_id;
 };
 
+//a pattern can have N tracks.
 struct pattern_t {
 	struct track_t *tracks;
 
@@ -31,6 +34,4 @@ struct pattern_t {
 extern struct pattern_t *pattern_new(int lines_per_beat, int tracks, int lines);
 extern void pattern_free(struct pattern_t *p);
 
-//access mode is the mode the UI is in. if the UI shows fourths and wants to access row 1
-//and our pattern buffer holds eights we will actually return row 2 (which is the start of the 2nd fourth note)
 extern struct element_t *pattern_elem_at(struct pattern_t *p, int track, int line);

@@ -23,9 +23,10 @@
 	NSLog(@"creating buffers ...");
 	
 	
-	g_ui_lines_per_beat = 1;
-	g_ui_lines = 16;	
+	g_ui_lines_per_beat = 4;
+	g_ui_lines = g_ui_lines_per_beat * 16;	
 	g_ui_tracks = 5;
+	g_bpm = 125;
 	
 	g_patterns = malloc(3 * sizeof(struct pattern_t*));
 	for (int i = 0; i < 3; i ++) {
@@ -38,11 +39,21 @@
 	g_patterns[0]->tracks[3].instrument_id = 4;
 	g_patterns[0]->tracks[4].instrument_id = 5;
 	
+	player = [[Player alloc] init];
+	
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
 	
-	
+
     return YES;
+}
+
+- (void) playpause
+{
+	if ([player isPlaying])
+		[player stop];
+	else
+		[player play];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

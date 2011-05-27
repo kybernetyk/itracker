@@ -35,6 +35,26 @@
 		samples[i] = i+1;
     [super viewDidLoad];
 	[self createButtons];
+	
+	arrow = [[UIView alloc] initWithFrame: CGRectMake(30, 0, 20, 10)];
+	[arrow setBackgroundColor: [UIColor blueColor]];
+	[scrollView addSubview: arrow];
+	
+	disp_link = [CADisplayLink displayLinkWithTarget: self selector: @selector(tick:)];
+	[disp_link setFrameInterval: 1];
+	[disp_link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+
+}
+
+- (void) tick: (id) sender
+{
+	CGRect f = [arrow frame];
+	f.origin.y = g_player_cur_line * (BUTTON_HEIGHT+Y_PADDING)+5;
+	[arrow setFrame: f];
+	
+	CGPoint p = [scrollView contentOffset];
+	if (fabs(f.origin.y - p.y) >= 280)
+		[scrollView setContentOffset:CGPointMake(0, f.origin.y-20) animated:YES];
 }
 
 
@@ -55,7 +75,7 @@
 #pragma mark - ui events
 - (void) playpause: (id) sender
 {
-	
+	[[[UIApplication sharedApplication] delegate] playpause];
 }
 
 #pragma mark - button creation
