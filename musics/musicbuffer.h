@@ -13,7 +13,7 @@ struct music_element_t {
 };
 
 struct music_buffer_t {
-	struct music_element_t buf[COLS*ROWS];
+	struct music_element_t buf[MUS_BUFSZ];
 };
 
 

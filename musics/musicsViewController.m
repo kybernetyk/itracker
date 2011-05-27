@@ -74,6 +74,22 @@
 	[scrollView addSubview: b];
 }
 
+- (void) createMarkerAtRow: (int) row
+{
+	UIView *v = [[UIView  alloc] initWithFrame: CGRectMake(0, row * (BUTTON_HEIGHT + Y_PADDING)-Y_PADDING/2-2, 320, 5)];
+	[v setBackgroundColor: [UIColor greenColor]];
+	[v autorelease];
+	[scrollView addSubview: v];
+}
+
+- (void) createDasheAtRow: (int) row
+{
+	UIView *v = [[UIView  alloc] initWithFrame: CGRectMake(0, row * (BUTTON_HEIGHT + Y_PADDING)-Y_PADDING/2, 320, 1)];
+	[v setBackgroundColor: [UIColor darkGrayColor]];
+	[v autorelease];
+	[scrollView addSubview: v];
+}
+
 - (void) createButtons 
 {
 	scrollView.contentSize = CGSizeMake(self.view.frame.size.width, ROWS * (BUTTON_HEIGHT + Y_PADDING));
@@ -86,6 +102,14 @@
 		for (int x = 0; x < COLS; x++) {
 			[self createButtonX: X_OFFSET+ x*(BUTTON_WIDTH+X_PADDING) y: y*(BUTTON_HEIGHT+Y_PADDING) tag: x + y * COLS];				
 		}
+		if (y % ((40/BUTTON_HEIGHT) * 1) == 0) {
+			[self createDasheAtRow: y];
+		}
+
+		if (y % ((40/BUTTON_HEIGHT) * 4) == 0) {
+			[self createMarkerAtRow: y];
+		}
+		
 	}
 }
 

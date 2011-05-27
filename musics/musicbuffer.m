@@ -18,7 +18,7 @@ struct music_buffer_t *mbuf_new(void)
 
 void mbuf_init(struct music_buffer_t *pbuf)
 {
-	for (int i = 0; i < COLS*ROWS; i++) {
+	for (int i = 0; i < MUS_BUFSZ; i++) {
 		pbuf->buf[i].sample_id = 0;
 	}
 }
