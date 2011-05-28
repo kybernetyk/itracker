@@ -8,6 +8,7 @@
 
 #import "musicsViewController.h"
 #import "musicbuffer.h"
+#import "Player.h"
 
 @implementation musicsViewController
 
@@ -48,6 +49,9 @@
 
 - (void) tick: (id) sender
 {
+	if (![g_player isPlaying])
+		return;
+	//if playing
 	CGRect f = [arrow frame];
 	f.origin.y = g_player_cur_line * (BUTTON_HEIGHT+Y_PADDING)+5;
 	[arrow setFrame: f];

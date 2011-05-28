@@ -45,7 +45,7 @@ struct element_t *pattern_elem_at(struct pattern_t *p, int track, int line)
 		abort();
 	}
 	
-	NSLog(@"accessing element @ %i,%i", track, line);
+//	NSLog(@"accessing element @ %i,%i", track, line);
 	struct element_t *e = &p->tracks[track].elements[line];
 	return e;
 }

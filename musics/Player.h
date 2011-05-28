@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
+#import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface Player : NSObject {
 	CADisplayLink *disp_link;
@@ -15,6 +18,8 @@
 	CFTimeInterval tick_count;
 	CFTimeInterval threshold;
 	int cur_line;
+	
+	NSString *instruments[255];
 }
 
 @property (readwrite, assign) BOOL isPlaying;
@@ -25,3 +30,5 @@
 - (void) stop;
 
 @end
+
+extern Player *g_player;

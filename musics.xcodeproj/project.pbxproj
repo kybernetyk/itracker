@@ -22,6 +22,20 @@
 		034C9293138FCEC300BFC4D7 /* globals.c in Sources */ = {isa = PBXBuildFile; fileRef = 034C9292138FCEC300BFC4D7 /* globals.c */; };
 		034C9296138FFA2800BFC4D7 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 034C9295138FFA2800BFC4D7 /* Player.m */; };
 		034C9298138FFA7500BFC4D7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034C9297138FFA7500BFC4D7 /* QuartzCore.framework */; };
+		03E437581391028700E01B44 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E437551391028700E01B44 /* AudioToolbox.framework */; };
+		03E4375A1391028700E01B44 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E437571391028700E01B44 /* CoreAudio.framework */; };
+		03E4375D1391044C00E01B44 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E4375C1391044C00E01B44 /* AVFoundation.framework */; };
+		03E437611391069A00E01B44 /* bd.caf in Resources */ = {isa = PBXBuildFile; fileRef = 03E4375F1391069A00E01B44 /* bd.caf */; };
+		03E437621391069A00E01B44 /* sd.caf in Resources */ = {isa = PBXBuildFile; fileRef = 03E437601391069A00E01B44 /* sd.caf */; };
+		03E4376613910B2300E01B44 /* bd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03E4376313910B2300E01B44 /* bd.wav */; };
+		03E4376713910B2300E01B44 /* hh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03E4376413910B2300E01B44 /* hh.wav */; };
+		03E4376813910B2300E01B44 /* sd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03E4376513910B2300E01B44 /* sd.wav */; };
+		03E4377B13910DE600E01B44 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E4377313910DE600E01B44 /* CDAudioManager.m */; };
+		03E4377C13910DE600E01B44 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E4377613910DE600E01B44 /* CDOpenALSupport.m */; };
+		03E4377D13910DE600E01B44 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E4377813910DE600E01B44 /* CocosDenshion.m */; };
+		03E4377E13910DE600E01B44 /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E4377A13910DE600E01B44 /* SimpleAudioEngine.m */; };
+		03E4378013910E0000E01B44 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E4377F13910E0000E01B44 /* OpenAL.framework */; };
+		03E43788139111EB00E01B44 /* oh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 03E43787139111EB00E01B44 /* oh.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +63,26 @@
 		034C9294138FFA2800BFC4D7 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		034C9295138FFA2800BFC4D7 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		034C9297138FFA7500BFC4D7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03E437551391028700E01B44 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03E437561391028700E01B44 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		03E437571391028700E01B44 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		03E4375C1391044C00E01B44 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		03E4375F1391069A00E01B44 /* bd.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bd.caf; sourceTree = "<group>"; };
+		03E437601391069A00E01B44 /* sd.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sd.caf; sourceTree = "<group>"; };
+		03E4376313910B2300E01B44 /* bd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bd.wav; sourceTree = "<group>"; };
+		03E4376413910B2300E01B44 /* hh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hh.wav; sourceTree = "<group>"; };
+		03E4376513910B2300E01B44 /* sd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sd.wav; sourceTree = "<group>"; };
+		03E4377213910DE600E01B44 /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
+		03E4377313910DE600E01B44 /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
+		03E4377413910DE600E01B44 /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
+		03E4377513910DE600E01B44 /* CDOpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOpenALSupport.h; sourceTree = "<group>"; };
+		03E4377613910DE600E01B44 /* CDOpenALSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOpenALSupport.m; sourceTree = "<group>"; };
+		03E4377713910DE600E01B44 /* CocosDenshion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDenshion.h; sourceTree = "<group>"; };
+		03E4377813910DE600E01B44 /* CocosDenshion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDenshion.m; sourceTree = "<group>"; };
+		03E4377913910DE600E01B44 /* SimpleAudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAudioEngine.h; sourceTree = "<group>"; };
+		03E4377A13910DE600E01B44 /* SimpleAudioEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAudioEngine.m; sourceTree = "<group>"; };
+		03E4377F13910E0000E01B44 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		03E43787139111EB00E01B44 /* oh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oh.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E4378013910E0000E01B44 /* OpenAL.framework in Frameworks */,
+				03E4375D1391044C00E01B44 /* AVFoundation.framework in Frameworks */,
+				03E437581391028700E01B44 /* AudioToolbox.framework in Frameworks */,
+				03E4375A1391028700E01B44 /* CoreAudio.framework in Frameworks */,
 				034C9298138FFA7500BFC4D7 /* QuartzCore.framework in Frameworks */,
 				03133DD8138E85C900189098 /* UIKit.framework in Frameworks */,
 				03133DDA138E85C900189098 /* Foundation.framework in Frameworks */,
@@ -69,6 +107,11 @@
 		03133DC8138E85C900189098 = {
 			isa = PBXGroup;
 			children = (
+				03E4377F13910E0000E01B44 /* OpenAL.framework */,
+				03E4375C1391044C00E01B44 /* AVFoundation.framework */,
+				03E437551391028700E01B44 /* AudioToolbox.framework */,
+				03E437561391028700E01B44 /* AudioUnit.framework */,
+				03E437571391028700E01B44 /* CoreAudio.framework */,
 				034C9297138FFA7500BFC4D7 /* QuartzCore.framework */,
 				03133DDD138E85C900189098 /* musics */,
 				03133DD6138E85C900189098 /* Frameworks */,
@@ -97,9 +140,11 @@
 		03133DDD138E85C900189098 /* musics */ = {
 			isa = PBXGroup;
 			children = (
+				03E4375E1391068B00E01B44 /* samples */,
 				03133DE6138E85C900189098 /* musicsAppDelegate.h */,
 				03133DE7138E85C900189098 /* musicsAppDelegate.m */,
 				03133DE9138E85C900189098 /* MainWindow.xib */,
+				03E4377113910DE600E01B44 /* CocosDenshion */,
 				03133DEC138E85C900189098 /* musicsViewController.h */,
 				03133DED138E85C900189098 /* musicsViewController.m */,
 				03133DEF138E85C900189098 /* musicsViewController.xib */,
@@ -126,6 +171,35 @@
 				03133DE4138E85C900189098 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03E4375E1391068B00E01B44 /* samples */ = {
+			isa = PBXGroup;
+			children = (
+				03E43787139111EB00E01B44 /* oh.wav */,
+				03E4376313910B2300E01B44 /* bd.wav */,
+				03E4376413910B2300E01B44 /* hh.wav */,
+				03E4376513910B2300E01B44 /* sd.wav */,
+				03E4375F1391069A00E01B44 /* bd.caf */,
+				03E437601391069A00E01B44 /* sd.caf */,
+			);
+			name = samples;
+			sourceTree = "<group>";
+		};
+		03E4377113910DE600E01B44 /* CocosDenshion */ = {
+			isa = PBXGroup;
+			children = (
+				03E4377213910DE600E01B44 /* CDAudioManager.h */,
+				03E4377313910DE600E01B44 /* CDAudioManager.m */,
+				03E4377413910DE600E01B44 /* CDConfig.h */,
+				03E4377513910DE600E01B44 /* CDOpenALSupport.h */,
+				03E4377613910DE600E01B44 /* CDOpenALSupport.m */,
+				03E4377713910DE600E01B44 /* CocosDenshion.h */,
+				03E4377813910DE600E01B44 /* CocosDenshion.m */,
+				03E4377913910DE600E01B44 /* SimpleAudioEngine.h */,
+				03E4377A13910DE600E01B44 /* SimpleAudioEngine.m */,
+			);
+			path = CocosDenshion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +254,12 @@
 				03133DF1138E85C900189098 /* musicsViewController.xib in Resources */,
 				03133DF9138E89C100189098 /* off.png in Resources */,
 				03133DFB138E89C500189098 /* on.png in Resources */,
+				03E437611391069A00E01B44 /* bd.caf in Resources */,
+				03E437621391069A00E01B44 /* sd.caf in Resources */,
+				03E4376613910B2300E01B44 /* bd.wav in Resources */,
+				03E4376713910B2300E01B44 /* hh.wav in Resources */,
+				03E4376813910B2300E01B44 /* sd.wav in Resources */,
+				03E43788139111EB00E01B44 /* oh.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +276,10 @@
 				034C928F138FCC9A00BFC4D7 /* musicbuffer.m in Sources */,
 				034C9293138FCEC300BFC4D7 /* globals.c in Sources */,
 				034C9296138FFA2800BFC4D7 /* Player.m in Sources */,
+				03E4377B13910DE600E01B44 /* CDAudioManager.m in Sources */,
+				03E4377C13910DE600E01B44 /* CDOpenALSupport.m in Sources */,
+				03E4377D13910DE600E01B44 /* CocosDenshion.m in Sources */,
+				03E4377E13910DE600E01B44 /* SimpleAudioEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
